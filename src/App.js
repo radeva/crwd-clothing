@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Switch, Route, useParams} from 'react-router-dom';
 
 import HomePage from './pages/homepage/homepage.component';
+import ShopPage from './pages/shop/shop.component';
 
 const AnyPage = () => {
   let { pageName } = useParams();
@@ -15,7 +16,9 @@ function App() {
     <div>
       <Router>
         <Switch>
+          <Route path='/shop' component={ShopPage} />
           <Route path='/shop/:pageName' component={AnyPage} />
+
           <Route exact path='/' component={HomePage} />
         </Switch>
       </Router>
@@ -24,3 +27,6 @@ function App() {
 }
 
 export default App;
+
+
+
